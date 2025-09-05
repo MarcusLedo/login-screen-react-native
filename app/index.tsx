@@ -6,14 +6,24 @@ import {
   StyleSheet,
   StatusBar,
 } from "react-native";
-import { useState } from "react";
+import { inputField as MyInputField } from "./components/inputField";
 
 export default function Index() {
-  const [name, setName] = useState("");
   return (
     <SafeAreaView style={styles.container}>
-      <TextInput style={styles.input} value={name} onChangeText={setName} />
-      <Text> My name is {name}</Text>
+      <Text style={styles.title}>Login</Text>
+      <MyInputField
+        label="Email"
+        bottomText="Please enter a valid email. e.g: user@example.com"
+        placeHolder="Enter your email"
+      ></MyInputField>
+
+      <MyInputField
+        label="Password"
+        bottomText={`Please enter a valid password:
+- Minimum 8 characters, at least one special symbol ('@', '$', '&'), one uppercase letter`}
+        placeHolder="Password"
+      ></MyInputField>
     </SafeAreaView>
   );
 }
@@ -25,15 +35,10 @@ const styles = StyleSheet.create({
     paddingTop: StatusBar.currentHeight,
   },
 
-  input: {
-    height: 40,
-    margin: 12,
-    padding: 10,
-    borderWidth: 1,
-  },
-
-  text: {
-    fontSize: 30,
-    padding: 10,
+  title: {
+    fontSize: 25,
+    padding: 2,
+    marginLeft: 20,
+    marginBottom: 20,
   },
 });
