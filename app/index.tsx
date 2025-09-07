@@ -1,4 +1,11 @@
-import { SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
+import {
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { inputField as MyInputField } from "./components/inputField";
 import { myBtn as Btn } from "./components/myBtn";
 
@@ -33,6 +40,14 @@ export default function Index() {
         <Btn color="#075eec" text="Login with Facebook" icon={userIcon}></Btn>
         <Btn color="#c1121f" text="Login with Google" icon={googleIcon}></Btn>
       </View>
+
+      {/* footer */}
+      <TouchableOpacity style={{ marginTop: "auto", marginBottom: 38 }}>
+        <Text style={styles.footerText}>
+          Don't Have an account?{" "}
+          <Text style={{ color: "#075eec" }}>Sign up</Text>
+        </Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }
@@ -51,32 +66,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 
-  btnContainer: {
-    margin: 14,
-  },
-
-  btn: {
-    backgroundColor: "#075eec",
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: "#075eec",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-  },
-
-  btnText: {
-    fontSize: 18,
+  footerText: {
+    fontSize: 14,
     fontWeight: 600,
-    color: "#fff",
-  },
-
-  btnIcon: {
-    width: 18,
-    height: 18,
-    marginLeft: 8,
-    marginRight: 8,
+    color: "#222",
+    textAlign: "center",
   },
 });
