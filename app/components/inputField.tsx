@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View, TextInput } from "react-native";
 import { Component } from "react";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 
 type inputFieldProps = {
   label: string;
@@ -30,11 +30,11 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    marginBottom: 24,
+    marginBottom: 14,
   },
 
   inputLabel: {
-    fontSize: 15,
+    fontSize: 16,
     fontWeight: "600",
     color: "#222",
     marginLeft: 20,
